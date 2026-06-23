@@ -13,7 +13,6 @@ The platform empowers students to:
 - 🔍 Search colleges instantly
 - 🏫 Explore institution profiles
 - 📊 Compare colleges
-- ❤️ Save preferred institutions
 - 🎯 Make informed academic decisions
 
 ---
@@ -39,9 +38,6 @@ View detailed information about institutions including:
 
 ### ⚖️ College Comparison
 Evaluate multiple institutions side-by-side to identify the best fit.
-
-### ❤️ Saved Colleges
-Bookmark and revisit colleges for future reference.
 
 ### 🔐 Authentication
 Secure user registration and login using JWT-based authentication.
