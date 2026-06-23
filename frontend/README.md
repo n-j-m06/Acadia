@@ -1,36 +1,148 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🎨 Acadia Frontend
 
-## Getting Started
+The frontend of Acadia provides a modern, responsive, and intuitive interface that enables students to discover, compare, and evaluate colleges efficiently.
 
-First, run the development server:
+---
+
+## 🚀 Features
+
+### 🔐 Authentication
+
+- User Login
+- User Registration
+- Protected Routes
+- Session Management
+
+### 🏠 Landing Page
+
+- Hero Section
+- College Search
+- Dynamic Suggestions
+- Interactive Navigation
+
+### 🔍 Smart Search
+
+- Real-Time Search
+- College Suggestions
+- Database-Driven Results
+- Fast Filtering Experience
+
+### 🏛 College Details Page
+
+Displays:
+
+- College Name
+- Location
+- Establishment Year
+- Stream
+- Category
+- Ownership
+- Rankings
+- Accreditation
+- Fees
+- Placement Information
+
+### ❤️ Saved Colleges
+
+Users can save colleges for future reference.
+
+### 🌙 Theme Support
+
+- Light Mode
+- Dark Mode
+
+### ✨ Modern UI
+
+- Responsive Design
+- Tailwind CSS Styling
+- Smooth Animations
+- Framer Motion Effects
+
+---
+
+## 🛠 Technologies Used
+
+- Next.js 15
+- React
+- TypeScript
+- Tailwind CSS
+- Framer Motion
+- Lucide React
+
+---
+
+## 📂 Folder Structure
+
+```text
+frontend/
+│
+├── app/
+│   ├── login/
+│   ├── dashboard/
+│   ├── college/
+│   ├── layout.tsx
+│   ├── page.tsx
+│   └── globals.css
+│
+├── components/
+│
+├── lib/
+│
+├── public/
+│
+└── README.md
+```
+
+---
+
+## ⚙️ Installation
+
+```bash
+npm install
+```
+
+---
+
+## Run Development Server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Build Application
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+```
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## Start Production Build
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+npm start
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## Frontend Highlights
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Fast and Responsive UI
+- Mobile-Friendly Design
+- Dynamic Search Experience
+- Beautiful Animations
+- Professional User Experience
+- Scalable Component Architecture
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## Developer
+
+### Niranjan J Menon
+
+B.Tech CSE (AI & ML)
+
+
+---
