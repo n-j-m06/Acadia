@@ -31,8 +31,8 @@ y: 0,
 
     try {
       const endpoint = isLogin
-        ? "http://localhost:5000/api/auth/login"
-        : "http://localhost:5000/api/auth/register";
+        ? "https://acadia-backend-e5ek.onrender.com/api/auth/login"
+        : "https://acadia-backend-e5ek.onrender.com/api/auth/register";
 
       const body = isLogin
         ? { email, password }
@@ -55,7 +55,7 @@ y: 0,
 
       if (!isLogin) {
         const loginResponse = await fetch(
-          "http://localhost:5000/api/auth/login",
+          "https://acadia-backend-e5ek.onrender.com/api/auth/login",
           {
             method: "POST",
             headers: {

@@ -12,7 +12,7 @@ export default function CollegePage() {
     const fetchCollege = async () => {
       try {
         const response = await fetch(
-          `http://localhost:5000/api/colleges/${params.id}`
+          `https://acadia-backend-e5ek.onrender.com/api/colleges/${params.id}`
         );
 
         const data = await response.json();

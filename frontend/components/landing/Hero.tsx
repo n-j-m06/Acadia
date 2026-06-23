@@ -49,7 +49,7 @@ useEffect(() => {
 
     try {
       const response = await fetch(
-        `http://localhost:5000/api/colleges/search?q=${search}`
+        `https://acadia-backend-e5ek.onrender.com/api/colleges/search?q=${search}`
       );
 
       const data = await response.json();
