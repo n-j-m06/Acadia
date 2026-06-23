@@ -18,9 +18,9 @@ export default function SearchCommand() {
   useEffect(() => {
     const down = (e: KeyboardEvent) => {
       if ((e.ctrlKey || e.metaKey) && e.key === "k") {
-        e.preventDefault();
-        setOpen((open) => !open);
-      }
+  e.preventDefault();
+  setOpen(!open);
+}
     };
 
     document.addEventListener("keydown", down);
