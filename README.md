@@ -154,10 +154,6 @@ npm run dev
 
 ### Niranjan J Menon
 
-B.Tech Computer Science and Engineering (AI & ML)
-
-VIT Chennai
-
 Passionate about Full Stack Development, Artificial Intelligence, Data Engineering, and Research-Driven Innovation.
 
 ---
