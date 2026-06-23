@@ -52,11 +52,11 @@ export default function Bento() {
           <GitCompare className="mb-4 h-8 w-8 text-blue-500" />
 
           <h3 className="text-2xl font-bold">
-            Compare Colleges
+            College Discovery
           </h3>
 
           <p className="mt-2 text-slate-600 dark:text-slate-300">
-            Compare colleges, fees, placements and academics.
+            Search and explore colleges across India.
           </p>
 
         </motion.div>
@@ -73,11 +73,11 @@ export default function Bento() {
           <Trophy className="mb-4 h-8 w-8 text-yellow-500" />
 
           <h3 className="text-2xl font-bold">
-            Rankings
+            Institution Profiles
           </h3>
 
           <p className="mt-2 text-slate-600 dark:text-slate-300">
-            Explore ranking metrics.
+           View detailed information about colleges.
           </p>
 
         </motion.div>
@@ -94,11 +94,11 @@ export default function Bento() {
           <MessageSquare className="mb-4 h-8 w-8 text-violet-500" />
 
           <h3 className="text-2xl font-bold">
-            Reviews & Insights
+           Smart Search
           </h3>
 
           <p className="mt-2 text-slate-600 dark:text-slate-300">
-            Genuine student reviews and campus experiences.
+           Quickly find colleges by name and location.
           </p>
 
         </motion.div>
@@ -115,11 +115,11 @@ export default function Bento() {
           <Briefcase className="mb-4 h-8 w-8 text-cyan-500" />
 
           <h3 className="text-2xl font-bold">
-            Placements
+           Location Insights
           </h3>
 
           <p className="mt-2 text-slate-600 dark:text-slate-300">
-            Placement trends and outcomes.
+            Explore institutions across different states.
           </p>
 
         </motion.div>
@@ -136,11 +136,11 @@ export default function Bento() {
           <GraduationCap className="mb-4 h-8 w-8 text-green-500" />
 
           <h3 className="text-2xl font-bold">
-            Scholarships & Financial Aid
+            Unified Platform
           </h3>
 
           <p className="mt-2 text-slate-600 dark:text-slate-300">
-            Explore grants, scholarships and funding opportunities.
+            Access college information in one place.
           </p>
 
         </motion.div>

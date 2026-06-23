@@ -1,11 +1,12 @@
 "use client";
-
+import { useRouter } from "next/navigation";
 import { Search } from "lucide-react";
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import { useSearchStore } from "@/lib/search-store";
 import Tilt from "react-parallax-tilt";
 import ThemeToggle from "@/components/theme-toggle";
+
 
 export default function Hero() {
 const [mousePosition, setMousePosition] = useState({
@@ -14,7 +15,7 @@ y: 0,
 });
 
 const { setOpen } = useSearchStore();
-
+const router = useRouter();
 const placeholders = [
 "Search colleges...",
 "Search AI & ML courses...",
@@ -24,6 +25,9 @@ const placeholders = [
 ];
 
 const [placeholderIndex, setPlaceholderIndex] = useState(0);
+const [search, setSearch] = useState("");
+const [selectedCollege, setSelectedCollege] = useState<any>(null);
+const [results, setResults] = useState<any[]>([]);
 
 useEffect(() => {
 const interval = setInterval(() => {
@@ -36,6 +40,30 @@ return () => clearInterval(interval);
 
 
 }, []);
+useEffect(() => {
+  const fetchColleges = async () => {
+    if (!search.trim()) {
+      setResults([]);
+      return;
+    }
+
+    try {
+      const response = await fetch(
+        `http://localhost:5000/api/colleges/search?q=${search}`
+      );
+
+      const data = await response.json();
+
+      setResults(data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const timeout = setTimeout(fetchColleges, 300);
+
+  return () => clearTimeout(timeout);
+}, [search]);
 return (
 <section
 onMouseMove={(e) =>
@@ -44,7 +72,7 @@ x: e.clientX,
 y: e.clientY,
 })
 }
-className="relative min-h-screen pt-10 bg-white dark:bg-slate-950"
+className="relative min-h-[70vh] bg-white dark:bg-slate-950"
 >
     {/* Ambient Glow Layer */}
 
@@ -87,7 +115,6 @@ className="relative min-h-screen pt-10 bg-white dark:bg-slate-950"
 
   <div className="relative z-10 mx-auto max-w-7xl px-6">
     <div className="flex justify-end mb-6">
-  <ThemeToggle />
 </div>
     <div className="grid items-center gap-20 lg:grid-cols-2">
 
@@ -137,17 +164,54 @@ className="relative min-h-screen pt-10 bg-white dark:bg-slate-950"
           transition={{ delay: 0.45 }}
           className="mt-10"
         >
-          <button
-            onClick={() => setOpen(true)}
-            className="flex w-full items-center justify-start rounded-2xl border border-slate-200 bg-white/80 p-4 shadow-2xl backdrop-blur-xl transition hover:shadow-3xl"
-          >
-            <Search className="mr-3 text-slate-400" />
+        <div className="relative max-w-[720px]">
 
-            <span className="text-slate-500">
-              {placeholders[placeholderIndex]}
-            </span>
+  <div className="flex w-full items-center rounded-2xl border border-slate-200 bg-white/80 p-4 shadow-2xl backdrop-blur-xl">
 
-          </button>
+    <Search className="mr-3 text-slate-400" />
+
+    <input
+      type="text"
+      value={search}
+      onChange={(e) =>
+        setSearch(e.target.value)
+      }
+      placeholder={
+        placeholders[placeholderIndex]
+      }
+      className="w-full bg-transparent outline-none"
+    />
+
+  </div>
+
+  {results.length > 0 && (
+  <div className="absolute z-50 mt-2 max-h-43 w-full overflow-y-auto rounded-2xl border border-slate-200 bg-white shadow-xl backdrop-blur-xl">
+
+      {results.map((college) => (
+      <div
+  key={college.id}
+  onClick={() => {
+    setSearch(college.name);
+    setSelectedCollege(college);
+    setResults([]);
+  }}
+  className="cursor-pointer border-b px-4 py-3 hover:bg-slate-50"
+>
+          <h3 className="text-sm font-semibold">
+            {college.name}
+          </h3>
+          <p className="text-xs text-slate-500">
+            {college.city}, {college.state}
+          </p>
+        </div>
+      ))}
+
+    </div>
+  )}
+
+</div>
+
+
         </motion.div>
 
         {/* BUTTONS */}
@@ -158,13 +222,23 @@ className="relative min-h-screen pt-10 bg-white dark:bg-slate-950"
           transition={{ delay: 0.6 }}
           className="mt-8 flex gap-4"
         >
-          <button className="rounded-xl bg-gradient-to-r from-blue-600 via-violet-500 to-cyan-500 px-6 py-3 font-medium text-white shadow-lg transition hover:-translate-y-1 hover:bg-blue-700">
-            Explore Colleges
-          </button>
+         <button
+  onClick={() => {
+    if (!selectedCollege) {
+      alert("Please select a college first");
+      return;
+    }
 
-          <button className="rounded-xl border border-slate-300 px-6 py-3 font-medium transition hover:bg-slate-50">
-            Compare Colleges
-          </button>
+    router.push(
+      `/college/${selectedCollege.id}`
+    );
+  }}
+  className="rounded-xl bg-gradient-to-r from-blue-600 via-violet-500 to-cyan-500 px-6 py-3 font-medium text-white shadow-lg transition hover:-translate-y-1"
+>
+  Explore Colleges
+</button>
+
+         
         </motion.div>
       </div>
 
@@ -303,7 +377,7 @@ className="relative min-h-screen pt-10 bg-white dark:bg-slate-950"
 
   <div>
     <h3 className="text-xl font-bold">
-      Discover
+     Search
     </h3>
 
     <p className="mt-2 text-sm text-slate-500">
@@ -339,11 +413,11 @@ className="relative min-h-screen pt-10 bg-white dark:bg-slate-950"
 
   <div>
     <h3 className="text-xl font-bold">
-      Compare
+      Profiles
     </h3>
 
     <p className="mt-2 text-sm text-slate-500">
-      Compare fees, placements and rankings.
+      View institution details
     </p>
   </div>
 </div>
@@ -375,11 +449,11 @@ className="relative min-h-screen pt-10 bg-white dark:bg-slate-950"
 
   <div>
     <h3 className="text-xl font-bold">
-      Explore
+      Insights
     </h3>
 
     <p className="mt-2 text-sm text-slate-500">
-      Discover insights and opportunities.
+      Explore college information
     </p>
   </div>
 </div>
@@ -411,11 +485,11 @@ className="relative min-h-screen pt-10 bg-white dark:bg-slate-950"
 
   <div>
     <h3 className="text-xl font-bold">
-      Decide
+      Choose
     </h3>
 
     <p className="mt-2 text-sm text-slate-500">
-      Make confident decisions for your future.
+      Make informed decisions.
     </p>
   </div>
 </div>

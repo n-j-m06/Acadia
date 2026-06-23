@@ -20,6 +20,19 @@ export default function AuthGuard({
     }
 
     setLoading(false);
+    const handleUnload = () => {
+  localStorage.removeItem("token");
+  localStorage.removeItem("user");
+};
+
+window.addEventListener("beforeunload", handleUnload);
+
+return () => {
+  window.removeEventListener(
+    "beforeunload",
+    handleUnload
+  );
+};
   }, [router]);
 
   if (loading) {

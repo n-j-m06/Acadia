@@ -13,4 +13,53 @@ model User {
   email     String   @unique
   password  String
   createdAt DateTime @default(now())
+
+  savedColleges SavedCollege[]
+}
+
+model College {
+  id               Int      @id @default(autoincrement())
+
+  name             String
+
+  stream           String
+  category         String?
+
+  city             String
+  state            String
+
+  nirfRank         Int?
+
+  fees             Int?
+
+  avgPackage       Float?
+  highestPackage   Float?
+
+  naacGrade        String?
+
+  ownership        String?
+
+  establishedYear  Int?
+
+  website          String?
+
+  description      String?
+
+  createdAt        DateTime @default(now())
+
+  savedBy          SavedCollege[]
+}
+
+model SavedCollege {
+  id         Int      @id @default(autoincrement())
+
+  userId     String
+  collegeId  Int
+
+  createdAt  DateTime @default(now())
+
+  user        User    @relation(fields: [userId], references: [id])
+  college     College @relation(fields: [collegeId], references: [id])
+
+  @@unique([userId, collegeId])
 }

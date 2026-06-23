@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Acadia",
+  title: "Acadia | Your College Companion",
   description: "Discover, Compare and Decide Better",
 };
 
@@ -25,7 +25,7 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
+      lang="en" suppressHydrationWarning
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
     <body className="acadia-bg min-h-full flex flex-col overflow-x-hidden">
