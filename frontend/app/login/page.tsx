@@ -14,6 +14,7 @@ export default function LoginPage() {
   const [password, setPassword] = useState("");
 
   const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
   const [loading, setLoading] = useState(false);
   const [mousePosition, setMousePosition] = useState({
 x: 0,
@@ -54,33 +55,13 @@ y: 0,
       }
 
      if (!isLogin) {
-  const loginResponse = await fetch(
-    "https://acadia-backend-e5ek.onrender.com/api/auth/login",
-    {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        email,
-        password,
-      }),
-    }
+  setSuccess(
+    "Account created successfully. Please sign in."
   );
 
-  const loginData = await loginResponse.json();
+  setLoading(false);
+  setIsLogin(true);
 
-  localStorage.setItem(
-    "token",
-    loginData.token
-  );
-
-  localStorage.setItem(
-    "user",
-    JSON.stringify(loginData.user)
-  );
-
-  router.push("/");
   return;
 }
 
@@ -326,6 +307,11 @@ transition={{
               {error}
             </p>
           )}
+          {success && (
+  <p className="text-green-400">
+    {success}
+  </p>
+)}
 
           <button
             type="submit"
