@@ -164,7 +164,7 @@ className="relative min-h-[70vh] bg-white dark:bg-slate-950"
           transition={{ delay: 0.45 }}
           className="mt-10"
         >
-        <div className="relative max-w-[720px]">
+        <div className="relative z-50 max-w-[720px]">
 
   <div className="flex w-full items-center rounded-2xl border border-slate-200 bg-white/80 p-4 shadow-2xl backdrop-blur-xl">
 
@@ -184,9 +184,8 @@ className="relative min-h-[70vh] bg-white dark:bg-slate-950"
 
   </div>
 
-  {results.length > 0 && (
-  <div className=" pointer-events-none absolute z-50 mt-2 max-h-43 w-full overflow-y-auto rounded-2xl border border-slate-200 bg-white shadow-xl backdrop-blur-xl">
-
+ {results.length > 0 && (
+  <div className="absolute z-[9999] mt-2 max-h-60 w-full overflow-y-auto rounded-2xl border border-slate-200 bg-white shadow-xl backdrop-blur-xl">
       {results.map((college) => (
       <div
   key={college.id}
@@ -217,11 +216,11 @@ className="relative min-h-[70vh] bg-white dark:bg-slate-950"
         {/* BUTTONS */}
 
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.6 }}
-          className="mt-8 flex gap-4"
-        >
+  initial={{ opacity: 0 }}
+  animate={{ opacity: 1 }}
+  transition={{ delay: 0.6 }}
+  className="relative z-0 mt-8 flex gap-4"
+>
          <button
   onClick={() => {
     if (!selectedCollege) {
