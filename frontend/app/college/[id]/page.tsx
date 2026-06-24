@@ -37,7 +37,7 @@ export default function CollegePage() {
   }
 
   return (
-    <div className="mx-auto max-w-6xl p-10">
+    <div className="mx-auto max-w-6xl px-4 py-8 md:p-10">
 
   <button
     onClick={() => router.push("/")}
@@ -46,7 +46,7 @@ export default function CollegePage() {
     ← Back to Search
   </button>
 
-    <h1 className="bg-gradient-to-r from-blue-600 via-violet-500 to-cyan-500 bg-clip-text text-6xl font-black text-transparent">
+    <h1 className="bg-gradient-to-r from-blue-600 via-violet-500 to-cyan-500 bg-clip-text text-4xl sm:text-5xl md:text-6xl font-black text-transparent break-words leading-tight">
         {college.name}
       </h1>
 
@@ -69,13 +69,13 @@ export default function CollegePage() {
 
 
 </div>
-      <div className="mt-10 grid gap-6 md:grid-cols-3">
+      <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
 
   <div className="rounded-2xl bg-white p-6 shadow-lg">
     <h3 className="text-sm text-slate-500">
       Stream
     </h3>
-    <p className="mt-2 text-2xl font-bold">
+   <p className="mt-2 break-words text-xl md:text-2xl font-bold">
       {college.stream || "Engineering"}
     </p>
   </div>
@@ -132,7 +132,7 @@ export default function CollegePage() {
 </div>
 <div className="mt-10 rounded-3xl bg-white p-8 shadow-lg">
 
-  <h2 className="text-3xl font-bold">
+  <h2 className="text-2xl md:text-3xl font-bold">
     About the Institution
   </h2>
 
