@@ -113,10 +113,10 @@ className="relative min-h-[70vh] bg-white dark:bg-slate-950"
   />
 
 
-  <div className="relative z-10 mx-auto max-w-7xl px-6">
+ <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6">
     <div className="flex justify-end mb-6">
 </div>
-    <div className="grid items-center gap-20 lg:grid-cols-2">
+    <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
 
       {/* LEFT SIDE */}
 
@@ -135,7 +135,7 @@ className="relative min-h-[70vh] bg-white dark:bg-slate-950"
           initial={{ opacity: 0, y: 35 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.15 }}
-          className="mt-8 text-6xl font-black leading-tight tracking-tight md:text-7xl"
+         className="mt-8 text-4xl font-black leading-tight tracking-tight sm:text-5xl md:text-6xl lg:text-7xl"
         >
           Choose Better.
           <br />
@@ -149,7 +149,7 @@ className="relative min-h-[70vh] bg-white dark:bg-slate-950"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.3 }}
-          className="mt-8 max-w-xl text-xl leading-relaxed text-slate-600"
+         className="mt-6 max-w-xl text-base leading-relaxed text-slate-600 sm:text-lg md:text-xl"
         >
           Search, compare and explore colleges through
           one unified platform designed to simplify
@@ -251,7 +251,7 @@ className="relative min-h-[70vh] bg-white dark:bg-slate-950"
         className="relative flex items-center justify-center"
       >
 
-        <div className="relative h-[650px] w-[650px]">
+      <div className="relative hidden h-[650px] w-[650px] lg:block">
             <motion.div
   animate={{
     scale: [1, 1.2, 1],
