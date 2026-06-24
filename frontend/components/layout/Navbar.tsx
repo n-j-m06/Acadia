@@ -49,11 +49,14 @@ export default function Navbar() {
         </div>
 
         {/* Right Side */}
-        <div className="flex items-center gap-4">
-           <ThemeToggle />
+      <div className="relative z-[100] flex items-center gap-4">
+          <div className="relative z-[100]">
+            <ThemeToggle />
+          </div>
           <button
-            onClick={handleLogout}
-            className="rounded-full bg-red-500 px-5 py-2 text-white transition hover:bg-red-600"
+  type="button"
+  onClick={handleLogout}
+           className="relative z-[100] rounded-full bg-red-500 px-5 py-2 text-white transition hover:bg-red-600"
           >
             Logout
           </button>

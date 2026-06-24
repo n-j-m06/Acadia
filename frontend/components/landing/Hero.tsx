@@ -84,7 +84,7 @@ className="relative min-h-[70vh] bg-white dark:bg-slate-950"
     duration: 12,
     repeat: Infinity,
   }}
-  className="absolute left-[-300px] top-[-200px] h-[900px] w-[900px] rounded-full bg-cyan-500/10 blur-[120px]"
+  className="pointer-events-none absolute left-[-300px] top-[-200px] h-[900px] w-[900px] rounded-full bg-cyan-500/10 blur-[120px]"
 />
 
 <motion.div
@@ -95,7 +95,7 @@ className="relative min-h-[70vh] bg-white dark:bg-slate-950"
     duration: 15,
     repeat: Infinity,
   }}
-  className="absolute right-[-300px] top-[100px] h-[900px] w-[900px] rounded-full bg-violet-500/10 blur-[120px]"
+  className="pointer-events-none absolute right-[-300px] top-[100px] h-[900px] w-[900px] rounded-full bg-violet-500/10 blur-[120px]"
 />
 {/* Mouse Spotlight */}
 
@@ -185,7 +185,7 @@ className="relative min-h-[70vh] bg-white dark:bg-slate-950"
   </div>
 
   {results.length > 0 && (
-  <div className="absolute z-50 mt-2 max-h-43 w-full overflow-y-auto rounded-2xl border border-slate-200 bg-white shadow-xl backdrop-blur-xl">
+  <div className=" pointer-events-none absolute z-50 mt-2 max-h-43 w-full overflow-y-auto rounded-2xl border border-slate-200 bg-white shadow-xl backdrop-blur-xl">
 
       {results.map((college) => (
       <div
@@ -260,7 +260,7 @@ className="relative min-h-[70vh] bg-white dark:bg-slate-950"
     duration: 3,
     repeat: Infinity,
   }}
-  className="absolute left-1/2 top-1/2 z-10 h-5 w-5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-r from-cyan-400 via-blue-500 to-violet-500 shadow-[0_0_80px_rgba(59,130,246,0.8)]"
+  className="pointer-events-none absolute left-1/2 top-1/2 z-10 h-5 w-5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-r from-cyan-400 via-blue-500 to-violet-500 shadow-[0_0_80px_rgba(59,130,246,0.8)]"
 />
 
 <motion.div
@@ -272,10 +272,10 @@ className="relative min-h-[70vh] bg-white dark:bg-slate-950"
     duration: 3,
     repeat: Infinity,
   }}
-  className="absolute left-1/2 top-1/2 z-0 h-10 w-10 -translate-x-1/2 -translate-y-1/2 rounded-full border border-cyan-300"
+  className="pointer-events-none absolute left-1/2 top-1/2 z-0 h-10 w-10 -translate-x-1/2 -translate-y-1/2 rounded-full border border-cyan-300"
 />
             <svg
-  className="absolute inset-0 h-full w-full"
+  className="pointer-events-none absolute inset-0 h-full w-full"
   viewBox="0 0 500 500"
 >
   <motion.line
@@ -368,7 +368,7 @@ className="relative min-h-[70vh] bg-white dark:bg-slate-950"
 }}
             className="group absolute left-1/2 top-[40px] z-30 w-[250px] h-[140px] -translate-x-1/2  rounded-3xl border border-white/30 bg-white/30 p-5 backdrop-blur-2xl shadow-xl"
           >
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-cyan-500/10 opacity-0 transition group-hover:opacity-100" />
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-blue-500/10 to-cyan-500/10 opacity-0 transition group-hover:opacity-100" />
 
             <div className="relative flex gap-4">
   <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-blue-100 text-2xl">
@@ -404,7 +404,7 @@ className="relative min-h-[70vh] bg-white dark:bg-slate-950"
 }}
             className="group absolute left-[20px] top-[260px] z-30 w-[250px] h-[140px]  rounded-3xl border border-white/30 bg-white/30 p-5 backdrop-blur-2xl shadow-xl"
           >
-            <div className="absolute inset-0 bg-gradient-to-r from-violet-500/10 to-blue-500/10 opacity-0 transition group-hover:opacity-100" />
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-violet-500/10 to-blue-500/10 opacity-0 transition group-hover:opacity-100" />
 
            <div className="relative flex gap-4">
   <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-violet-100 text-2xl">
@@ -440,7 +440,7 @@ className="relative min-h-[70vh] bg-white dark:bg-slate-950"
 }}
             className="group absolute right-[20px] top-[260px] z-30 w-[250px] h-[140px]  rounded-3xl border border-white/30 bg-white/30 p-5 backdrop-blur-2xl shadow-xl"
           >
-            <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 opacity-0 transition group-hover:opacity-100" />
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 opacity-0 transition group-hover:opacity-100" />
 
            <div className="relative flex gap-4">
   <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-cyan-100 text-2xl">
@@ -476,7 +476,7 @@ className="relative min-h-[70vh] bg-white dark:bg-slate-950"
 }}
             className="group absolute left-1/2 top-[500px] left-1/2 z-30 w-[250px] h-[140px] -translate-x-1/2  rounded-3xl border border-white/30 bg-white/30 p-5 backdrop-blur-2xl shadow-xl"
           >
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-violet-500/10 opacity-0 transition group-hover:opacity-100" />
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-blue-500/10 to-violet-500/10 opacity-0 transition group-hover:opacity-100" />
 
             <div className="relative flex gap-4">
   <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-blue-100 text-2xl">
