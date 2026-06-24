@@ -53,14 +53,34 @@ y: 0,
         return;
       }
 
-      if (!isLogin) {
-  alert("Account created successfully. Please sign in.");
+     if (!isLogin) {
+  const loginResponse = await fetch(
+    "https://acadia-backend-e5ek.onrender.com/api/auth/login",
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email,
+        password,
+      }),
+    }
+  );
 
-  setIsLogin(true);
-  setName("");
-  setEmail("");
-  setPassword("");
+  const loginData = await loginResponse.json();
 
+  localStorage.setItem(
+    "token",
+    loginData.token
+  );
+
+  localStorage.setItem(
+    "user",
+    JSON.stringify(loginData.user)
+  );
+
+  router.push("/");
   return;
 }
 
